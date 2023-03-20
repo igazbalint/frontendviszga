@@ -31,10 +31,9 @@ function detectNumbers(id) {
     numbers.push(lis[i].innerHTML);
     //console.log(numbers)
   }
-
-  if (numbers.length === 0) {
-    return false;
+  if (!document.getElementById("result")) {
+    return false
   }
-
-  return numbers;
+  return numbers
 }
+
