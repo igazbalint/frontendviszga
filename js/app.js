@@ -4,12 +4,16 @@ const li = document.createElement('li');
 
 function generateNumbers(){
     
+    if (!document.getElementById("result")) {
+        console.warn("A #result doboz nem letezik!");
+      }
+
     for (let i = 1; i < 11; i++ ){
         const li = document.createElement('li');
 
         let randomNumber = Math.floor(Math.random() * 41) + 5;
 
-        console.log(randomNumber)
+        //console.log(randomNumber)
 
         li.appendChild(document.createTextNode(randomNumber))
 
@@ -17,6 +21,7 @@ function generateNumbers(){
     }
 
     container.appendChild(ul)
+
 }
 
-generateNumbers()
+//generateNumbers()
