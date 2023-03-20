@@ -24,16 +24,37 @@ function generateNumbers() {
 
 //generateNumbers()
 function detectNumbers(id) {
-  const numbers = [];
-  const lis = document.querySelectorAll("li");
-  for (let i = 0; i < lis.length; i++) {
-    //console.log(lis[i].innerHTML)
-    numbers.push(lis[i].innerHTML);
-    //console.log(numbers)
-  }
-  if (!document.getElementById("result")) {
-    return false
-  }
-  return numbers
+    //eloszor felreertettem 
+
+    let doboz = document.getElementById(id);
+    if (!doboz) {
+      return false;
+    } 
+  
+    const numbers = [];
+    const lis = document.querySelectorAll("li");
+    for (let i = 0; i < lis.length; i++) {
+      numbers.push(lis[i].innerHTML);
+      console.log(numbers)
+    }
+    
+    return numbers;
 }
 
+function getEvenNums(array) {
+  const evenNums = [];
+
+  if (detectNumbers() == false) {
+    console.log("a detectNumbers eredmenye false volt");
+  } else
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] % 2 === 0) {
+        evenNums.push(array[i]);
+      }
+    }
+
+  console.log(`even nums: ${evenNums}`);
+  return evenNums;
+}
+
+getEvenNums(detectNumbers())
