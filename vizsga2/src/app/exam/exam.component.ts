@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms'
 
 @Component({
   selector: 'app-exam',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./exam.component.scss']
 })
 export class ExamComponent {
-
+  text!: string;
+  result: string =''
+  saveResult(){
+    this.result = this.text
+  }
 }
