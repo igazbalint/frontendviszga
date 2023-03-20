@@ -5,7 +5,13 @@
             <input type="text" class="form-control" id="input" placeholder="input" 
             [(ngModel)]="text" >
             </div>
-            <button type="submit" class="btn btn-primary my-1" (click)="saveResult()">Submit</button>
-            <p>{{ result }}</p>
+            <button type="submit" class="btn btn-primary my-1" (click)="saveResult(); decide()">Submit</button>
+            <p>{{ result + 'is the number even?' + isEven }}</p>
+    </div>
+    <div class="row">
+        <h2>LOG</h2>
+        <ul *ngFor="let result of results">
+            <li>{{result}}</li>
+        </ul>
     </div>
 </div>
